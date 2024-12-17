@@ -33,13 +33,9 @@ include("utilities")
 # Project's source files
 # --------------------------------------------------------------------------------------------------
 
-set(
-    SOURCE_FILES
-
-    "${CMAKE_CURRENT_LIST_DIR}/src/main.cpp"
-)
-
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+# Add all c source files under the src directory
+file(GLOB SOURCES "src/*.cpp")
+add_executable(${PROJECT_NAME} ${SOURCES})
 
 # --------------------------------------------------------------------------------------------------
 # Dependencies
