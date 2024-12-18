@@ -33,6 +33,9 @@ include("utilities")
 # Project's source files
 # --------------------------------------------------------------------------------------------------
 
+# Header files
+include_directories("${PROJECT_SOURCE_DIR}/include")
+
 # Add all c source files under the src directory
 file(GLOB SOURCES "src/*.cpp")
 add_executable(${PROJECT_NAME} ${SOURCES})
