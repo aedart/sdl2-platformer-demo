@@ -2,9 +2,13 @@
 BasedOnStyle: Google
 IndentWidth: 4
 IndentAccessModifiers: true
+InsertBraces: true
 BraceWrapping:
     AfterClass:      true
-    AfterControlStatement: true
+    AfterControlStatement: false
     AfterEnum:       true
     AfterFunction:   true
+    AfterCaseLabel:  false
 BreakBeforeBraces: Custom
+AllowShortLoopsOnASingleLine: true
+AllowShortBlocksOnASingleLine: true
