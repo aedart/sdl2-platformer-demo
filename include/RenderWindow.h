@@ -17,12 +17,21 @@ class RenderWindow
          * @param width Width of the window
          * @param height Height of the window
          */
-        RenderWindow(const char *title, int width, int height);
+        RenderWindow(const char* title, int width, int height);
 
         /**
          * Destructor
          */
         ~RenderWindow();
+
+        /**
+         * Load texture
+         *
+         * @param file Full path to texture file
+         *
+         * @return Pointer to the loaded SDL Texture
+         */
+        SDL_Texture* loadTexture(const char* file);
 
         /**
          * Destroy the created window
@@ -33,14 +42,14 @@ class RenderWindow
         /**
          * The SDL Window pointer
          */
-        SDL_Window *window;
+        SDL_Window* window;
 
         /**
          * The SDL Renderer
          *
          * A struct that handles all rendering
          */
-        SDL_Renderer *renderer{};
+        SDL_Renderer* renderer{};
 };
 
 #endif  // RENDER_WINDOW_H

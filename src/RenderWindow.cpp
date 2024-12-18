@@ -39,10 +39,21 @@ RenderWindow::~RenderWindow()
 {
     this->destroy();
 
-    // Perhaps a bit redundant, but it should be safe enough to delete
-    // null pointers...
-    delete this->window;
-    delete this->renderer;
+    // window and renderer should already be set to null pointers,
+    // so deleting them is redundant.
+    // delete this->window;
+    // delete this->renderer;
+}
+
+SDL_Texture* RenderWindow::loadTexture(const char* file)
+{
+    SDL_Texture* texture = IMG_LoadTexture(this->renderer, file);
+
+    if (texture == nullptr) {
+        std::cerr << "Failed to load texture: " << SDL_GetError() << std::endl;
+    }
+
+    return texture;
 }
 
 void RenderWindow::destroy()
