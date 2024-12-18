@@ -34,6 +34,23 @@ class RenderWindow
         SDL_Texture* loadTexture(const char* file);
 
         /**
+         * Clear everything that has been rendered
+         */
+        void clear();
+
+        /**
+         * Render given texture
+         *
+         * @param texture
+         */
+        void render(SDL_Texture* texture);
+
+        /**
+         * Display textures onto the screen
+         */
+        void display();
+
+        /**
          * Destroy the created window
          */
         void destroy();

@@ -56,8 +56,26 @@ SDL_Texture* RenderWindow::loadTexture(const char* file)
     return texture;
 }
 
+void RenderWindow::clear()
+{
+    SDL_RenderClear(this->renderer);
+}
+
+void RenderWindow::render(SDL_Texture* texture)
+{
+    // TODO: This will be adapted at a later point.
+    SDL_RenderCopy(this->renderer, texture, nullptr, nullptr);
+}
+
+void RenderWindow::display()
+{
+    SDL_RenderPresent(this->renderer);
+}
+
 void RenderWindow::destroy()
 {
+    this->clear();
+
     SDL_DestroyRenderer(this->renderer);
     SDL_DestroyWindow(this->window);
 
