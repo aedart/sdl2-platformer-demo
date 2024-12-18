@@ -12,7 +12,9 @@ find_package(SDL2_image REQUIRED)
 
 # Debug
 message(STATUS "SDL2 Image found: ${SDL2_image_FOUND}")
+# print(SDL2_IMAGE_INCLUDE_DIRS SDL2_IMAGE_LIBRARIES)
 
-include_directories(${SDL2_IMAGE_INCLUDE_DIRS})
+#include_directories(${SDL2_IMAGE_INCLUDE_DIRS})
 
-target_link_libraries(${PROJECT_NAME} ${SDL2_IMAGE_LIBRARIES})
+#target_link_libraries(${PROJECT_NAME} ${SDL2_IMAGE_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} SDL2_image::SDL2_image)
