@@ -31,6 +31,8 @@ int main(int argc, char *argv[])
     // Init the window
     RenderWindow window("Game v.0.1.0", 1280, 720);
 
+    SDL_Texture* grassTexture = window.loadTexture("resources/gfx/ground_grass_1.png");
+
     // -------------------------------------------------------------------------
     // Game Loop
     // -------------------------------------------------------------------------
@@ -49,8 +51,15 @@ int main(int argc, char *argv[])
             // When user requests the window closed
             if (event.type == SDL_QUIT) {
                 running = false;
+                break;
             }
         }
+
+        window.clear();
+
+        window.render(grassTexture);
+
+        window.display();
     }
 
     // -------------------------------------------------------------------------
