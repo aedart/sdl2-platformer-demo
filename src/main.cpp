@@ -5,9 +5,14 @@
 
 int main(int argc, char *argv[])
 {
-    // -------------------------------------------------------------------------
-    // Initialisation
-    // -------------------------------------------------------------------------
+    // Window title
+    const auto WINDOW_TITLE = "Game v.0.1.0";
+
+    // Screen width in pixels
+    constexpr int SCREEN_WIDTH = 1280;
+
+    // Screen height in pixels
+    constexpr int SCREEN_HEIGHT = 720;
 
     // Define the SDL flags for initialisation, which must be ready
     // before able to start a game loop.
@@ -15,6 +20,10 @@ int main(int argc, char *argv[])
 
     // Define the SDL Image flags for initialisation.
     constexpr int SDL_IMAGE_FLAGS = IMG_INIT_PNG;
+
+    // -------------------------------------------------------------------------
+    // Initialisation
+    // -------------------------------------------------------------------------
 
     // Abort if SDL failed to initialise.
     if (SDL_Init(SDL_FLAGS) != 0) {
@@ -29,7 +38,11 @@ int main(int argc, char *argv[])
     }
 
     // Init the window
-    RenderWindow window("Game v.0.1.0", 1280, 720);
+    RenderWindow window(
+        WINDOW_TITLE,
+        SCREEN_WIDTH,
+        SCREEN_HEIGHT
+    );
 
     SDL_Texture* grassTexture = window.loadTexture("resources/gfx/ground_grass_1.png");
 
