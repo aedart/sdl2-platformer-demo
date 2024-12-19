@@ -2,6 +2,7 @@
 #include <SDL2/SDL_image.h>
 #include <iostream>
 #include "RenderWindow.h"
+#include "Entity.h"
 
 /**
  * C++ Platformer Demo
@@ -60,6 +61,8 @@ int main(int argc, char *argv[])
 
     SDL_Texture* grassTexture = window.loadTexture("resources/gfx/ground_grass_1.png");
 
+    Entity platform0(100, 100, grassTexture);
+
     // -------------------------------------------------------------------------
     // Game Loop
     // -------------------------------------------------------------------------
@@ -84,7 +87,7 @@ int main(int argc, char *argv[])
 
         window.clear();
 
-        window.render(grassTexture);
+        window.render(platform0);
 
         window.display();
     }
