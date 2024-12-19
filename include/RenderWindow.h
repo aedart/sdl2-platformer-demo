@@ -44,7 +44,7 @@ class RenderWindow
          *
          * @param entity
          */
-        void render(const Entity &entity);
+        void render(Entity &entity);
 
         /**
          * Display textures onto the screen

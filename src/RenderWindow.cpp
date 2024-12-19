@@ -62,7 +62,7 @@ void RenderWindow::clear()
     SDL_RenderClear(this->renderer);
 }
 
-void RenderWindow::render(const Entity &entity)
+void RenderWindow::render(Entity &entity)
 {
     const auto [
         x,
