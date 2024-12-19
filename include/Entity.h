@@ -21,6 +21,14 @@ class Entity
         Entity(int x, int y, SDL_Texture* texture);
 
         /**
+         * Constructor
+         *
+         * @param position The position of this entity
+         * @param texture The texture of this entity
+         */
+        Entity(Position position, SDL_Texture* texture);
+
+        /**
          * Get the X position of entity
          *
          * @return
