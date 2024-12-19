@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
         window.clear();
 
         // Render all entities
-        for (const auto &entity : entities) {
+        for (auto &entity : entities) {
             window.render(entity);
         }
 
