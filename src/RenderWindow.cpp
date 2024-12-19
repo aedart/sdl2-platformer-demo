@@ -27,7 +27,7 @@ RenderWindow::RenderWindow(const char *title, const int width, const int height)
     this->renderer = SDL_CreateRenderer(
         this->window,
         -1,
-        SDL_RENDERER_ACCELERATED
+        SDL_RENDERER_ACCELERATED && SDL_RENDERER_PRESENTVSYNC
     );
 
     // Output error, in case that renderer failed (an exception might be better here)
