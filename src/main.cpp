@@ -3,6 +3,18 @@
 #include <iostream>
 #include "RenderWindow.h"
 
+/**
+ * C++ Platformer Demo
+ *
+ * Source code is inspired by [Marty's](https://github.com/codergopher) video tutorial.
+ *
+ * @see https://youtube.com/playlist?list=PL2RPjWnJduNmXHRYwdtublIPdlqocBoLS&si=W45pyJBSc5ZdtlA0
+ *
+ * @param argc
+ * @param argv
+ *
+ * @return
+ */
 int main(int argc, char *argv[])
 {
     // Window title
