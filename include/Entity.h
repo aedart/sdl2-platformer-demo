@@ -17,18 +17,46 @@ class Entity
          * @param y Y position on screen
          * @param texture The texture of this entity
          */
-        Entity(float x, float y, SDL_Texture* texture);
+        Entity(int x, int y, SDL_Texture* texture);
+
+        /**
+         * Get the X position of entity
+         *
+         * @return
+         */
+        [[nodiscard]] int getX() const;
+
+        /**
+         * Get the Y position of entity
+         *
+         * @return
+         */
+        [[nodiscard]] int getY() const;
+
+        /**
+         * Get the texture used by this entity
+         *
+         * @return
+         */
+        [[nodiscard]] SDL_Texture* getTexture() const;
+
+        /**
+         * Get the texture used by this entity
+         *
+         * @return
+         */
+        [[nodiscard]] SDL_Rect getCurrentFrame() const;
 
     protected:
         /**
          * X position
          */
-        float x;
+        int x;
 
         /**
          * Y position
          */
-        float y;
+        int y;
 
         /**
          * The current frame of this entity
