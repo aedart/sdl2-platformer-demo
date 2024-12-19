@@ -3,8 +3,7 @@
 #include <SDL2/SDL_image.h>
 
 Entity::Entity(const int x, const int y, SDL_Texture* texture):
-    x(x),
-    y(y),
+    position(x, y),
     currentFrame(),
     texture(texture)
 {
@@ -14,14 +13,19 @@ Entity::Entity(const int x, const int y, SDL_Texture* texture):
     this->currentFrame.h = 32;
 }
 
-int Entity::getX() const
+int Entity::getX()
 {
-    return this->x;
+    return this->getPosition().x;
 }
 
-int Entity::getY() const
+int Entity::getY()
 {
-    return this->y;
+    return this->getPosition().y;
+}
+
+Position& Entity::getPosition()
+{
+    return this->position;
 }
 
 SDL_Texture* Entity::getTexture() const

@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include "Position.h"
 
 /**
  * Entity
@@ -24,14 +25,21 @@ class Entity
          *
          * @return
          */
-        [[nodiscard]] int getX() const;
+        int getX();
 
         /**
          * Get the Y position of entity
          *
          * @return
          */
-        [[nodiscard]] int getY() const;
+        int getY();
+
+        /**
+         * Get the position of this entity
+         *
+         * @return
+         */
+        Position& getPosition();
 
         /**
          * Get the texture used by this entity
@@ -49,14 +57,9 @@ class Entity
 
     protected:
         /**
-         * X position
+         * Position of this entity
          */
-        int x;
-
-        /**
-         * Y position
-         */
-        int y;
+        Position position;
 
         /**
          * The current frame of this entity
