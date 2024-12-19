@@ -27,6 +27,9 @@ RenderWindow::RenderWindow(const char *title, const int width, const int height)
     this->renderer = SDL_CreateRenderer(
         this->window,
         -1,
+
+        // The SDL_RENDERER_PRESENTVSYNC is really important here, or SDL might
+        // use way too much CPU.
         SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC
     );
 
