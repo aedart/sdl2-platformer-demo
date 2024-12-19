@@ -3,6 +3,7 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include "Entity.h"
 
 /**
  * Render Window
@@ -39,11 +40,11 @@ class RenderWindow
         void clear();
 
         /**
-         * Render given texture
+         * Render given entity
          *
-         * @param texture
+         * @param entity
          */
-        void render(SDL_Texture* texture);
+        void render(const Entity &entity);
 
         /**
          * Display textures onto the screen

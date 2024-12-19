@@ -2,6 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "RenderWindow.h"
+#include "Entity.h"
 
 RenderWindow::RenderWindow(const char *title, const int width, const int height):
     window(nullptr),
@@ -61,10 +62,34 @@ void RenderWindow::clear()
     SDL_RenderClear(this->renderer);
 }
 
-void RenderWindow::render(SDL_Texture* texture)
+void RenderWindow::render(const Entity &entity)
 {
-    // TODO: This will be adapted at a later point.
-    SDL_RenderCopy(this->renderer, texture, nullptr, nullptr);
+    const auto [
+        x,
+        y,
+        w,
+        h
+    ] = entity.getCurrentFrame();
+
+    // The source position and dimensions of the texture
+    // to be copied.
+    SDL_Rect source;
+    source.x = x;
+    source.y = y;
+    source.w = w;
+    source.h = h;
+
+    // TODO: Scale factor... should somehow be at class level, or in entity?
+    constexpr int scaleFactor {4};
+
+    // The destination position and dimensions...
+    SDL_Rect destination;
+    destination.x = entity.getX() * scaleFactor;
+    destination.y = entity.getY() * scaleFactor;
+    destination.w = w * scaleFactor;
+    destination.h = h * scaleFactor;
+
+    SDL_RenderCopy(this->renderer, entity.getTexture(), &source, &destination);
 }
 
 void RenderWindow::display()
