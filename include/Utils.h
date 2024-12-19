@@ -5,11 +5,11 @@
 
 namespace Utils
 {
-/**
- * Returns elapsed time since SDL initialised in seconds
- *
- * @return
- */
+    /**
+     * Returns elapsed time since SDL initialised in seconds
+     *
+     * @return
+     */
     inline float elapsedTimeInSeconds()
     {
         float t = SDL_GetTicks();
