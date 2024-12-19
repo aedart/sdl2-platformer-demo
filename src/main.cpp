@@ -4,6 +4,7 @@
 #include <vector>
 #include "RenderWindow.h"
 #include "Entity.h"
+#include "Utils.h"
 
 /**
  * C++ Platformer Demo
@@ -96,6 +97,9 @@ int main(int argc, char *argv[])
         for (auto &entity : entities) {
             window.render(entity);
         }
+
+        // Debug
+        // std::cout << Utils::elapsedTimeInSeconds() << std::endl;
 
         window.display();
     }
